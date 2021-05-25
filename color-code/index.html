@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Color Slider | Rawandesign.ga</title>
+    <style>
+        body{
+
+    background-color: rgb(245, 222, 77);
+
+    padding: 0;
+    margin: 0;
+}
+.layout{
+    height: 500px;
+    width: 100vw;
+    position: absolute;
+    -webkit-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+}
+.container{
+    background-color: #ffffff;
+    position: relative;
+    width: 60%;
+    min-width: 320px;
+    -webkit-box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+            box-shadow: 20px 20px 30px rgba(0,0,0,0.2);
+    padding: 20px 0;
+    font-family: 'Work Sans',sans-serif;
+    color: #142B37;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 5px;
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+}
+.wrapper{
+    width: 100%;
+    text-align: center;
+}
+input[type="range"]{
+    display: inline-block;
+    width: 80%;
+    margin-left: 10px;
+    margin-top: 25px;
+}
+span{
+    display: inline-block;
+    text-align: center;
+    margin: 20px 0 ;
+    background-color:#0075FF;
+    color: #ffffff;
+    padding: 10px 30px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+}
+    </style>
+</head>
+<body>
+<div class="layout">
+   <div class="container">
+       <div class="wrapper">
+            R <input type="range" min="0" max="255" value="245" id="red"  oninput="colors()">
+        </div>
+        <div class="wrapper">
+            G <input type="range" min="0" max="255" value="222" id="green" oninput="colors()">
+        </div>
+        <div class="wrapper">
+            B <input type="range" min="0" max="255" value="77" id="blue" oninput="colors()">
+        </div>
+       <span id="output">rgb(245, 222, 77)</span>
+   </div> 
+</div>
+
+<script>
+    function colors(){
+            var red = document.getElementById("red").value;
+           var green = document.getElementById("green").value;
+           var blue = document.getElementById("blue").value;
+           document.body.style.backgroundColor =
+             'rgb(' + red + ',' + green + ',' + blue + ')' ;
+            document.getElementById("output").innerHTML=  'rgb(' + red + ', ' + green + ', ' + blue + ')' ;
+        }
+</script>
+</body>
+</html>
